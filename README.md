@@ -9,6 +9,9 @@ Rocket Journal is the best wellness productivity tool for you. Document memories
 - JavaScript (API)
 - Firebase : Firestore, Firebase Auth (Real time JSON doc storage)
 
+# Tell me more about Wit.ai
+Wit.ai is the super intelligent, low-code NLP processing layer used in RocketJournal to quickly, effortlessly parse user input and modify the journal in real time. Wit figures out which daytime to add or remove (intent) journal entries (custom message body). It is super easy to re-train!
+
 
 # Steps
 ## Github Repo
