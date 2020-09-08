@@ -22,6 +22,8 @@ Wit.ai is the super intelligent, low-code NLP processing layer used in RocketJou
 - Source code, demo app, firebase database for hackathon judging purpose only.
 - All other usage not permitted. 
 - Contact optanovo@gmail.com
+## Demo Video
+[Demo Video](https://youtu.be/Usg7ZOuV3iE)
 
 ## Demo App
 1. Visit [Demo](https://rocketjournal-b9099.wl.r.appspot.com)
