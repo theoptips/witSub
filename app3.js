@@ -157,7 +157,8 @@ function witAPI(message){
                 tMsg.push(mBody);
                 let docData = doc.data();
                 docData.messages = tMsg
-                temp.set(docData)
+                //temp.set(docData)
+                dbFirestore.collection(currentUserId).doc(wDay).set(docData)
             } else {
                 // doc.data() will be undefined in this case
                 console.log("No such document!");
@@ -196,7 +197,8 @@ function witAPI(message){
                 tMsg.splice(val, 1);
                 let docData = doc.data();
                 docData.messages = tMsg;
-                temp.set(docData);
+                //temp.set(docData);
+                dbFirestore.collection(currentUserId).doc(wDay).set(docData);
                 } 
               else {
                 // doc.data() will be undefined in this case
