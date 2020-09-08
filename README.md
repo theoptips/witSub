@@ -52,6 +52,8 @@ Next step is easy to implement for all days. Wit.ai does not need retraining. Ex
 
 *Cool Feature* The next step for RocketJournal is to implement the cool bullet marketing in Bullet Journal : o for events, • for tasks, * for important, - for notes. It is so much fun. It is actually very easy with css custom bullet. [Custom Bullet](https://web.dev/css-marker-pseudo-element/). Contact me. I can tell you all about optanovo@gmail.com
 
+*Cool Feature* easy integration with messenger bot and easy better implementation in React.js (FB ecosystem project) .
+
 Providing for sample utterances. Wit.ai is a convenient one shot or few shot NLP model, it associates some keywords with message_body or datetime, even if it is actually ordinal,for example "the first item" is parsed as entity datetime because of the keyword the. Removing the keyword "first", it can parse as ordinal. 
 
 A trick I used in this project is to call wit.ai twice. Once for the entire input, then for the message_body input to identify the ordinal entity. Ideally, wit.ai is smart enough to associate ordinal value with all the remove intents but right now it is not automatically doing so. Despite adding many sample utterances. 
