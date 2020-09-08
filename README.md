@@ -32,7 +32,7 @@ Rocket Journal is the best wellness productivity tool for you. Document memories
 1. (Note currently, the logic is implemented for demo purpose on the Monday list Only)
 1. (Limited implementation due to hackathon time limit, see cool features, next steps in Next Step section)
 
-![Demo Image](demoImage01.PNG)
+![Demo Image](demoImage02.png)
 
 ## How to Run Locally
 1. Download [repo](https://github.com/theoptips/witSub)
