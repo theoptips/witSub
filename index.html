@@ -10,14 +10,26 @@
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
 <!-- <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script> -->
+<style type="text/css">
+.ctrbox {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}  
+
+</style>
 </head>
 <body>
-<nav>
+<nav class="ctrbox">
+
+    <h2 style="color:white;">Step 01 Sign Up with Firebase Auth</h2>
     <form id="signup-form">
         <input type="text" name="email" hint="email" />
         <input type="password" name="password" hint="password"/>
         <button>Sign Up</button>
     </form>
+    <h2 style="color:white;">Step 02 Sign In for realtime Firestore change listening</h2>
     <form id="signin-form">
         <input type="text" name="email" hint="email" />
         <input type="password" name="password" hint="password"/>
@@ -26,13 +38,15 @@
     <form id="signout">
         <button>Sign Out</button>
     </form>
+    <h2 style="color:white;">Step 03 Interact with Facebook Wit.ai Natural Language Processing</h2>
     <form id="witapi" style="color:white">
       <h3>WIT API</h3>
           <input type="text" name="message" hint="email" />
           <!-- <input type="submit value="Log Journal"> -->
           <button>Submit</button>
     </form>
-    <div style="color:white;" id="witresult"><p>test</p></div>
+    <div style="color:white;" id="witresult"><p>Interact with RocketJournal here. Wit.ai response will be displayed for education purpose.</p></div>
+    <h3 style="color:white;">Devpost and Facebook judges please visit REPO and README  <a href="https://github.com/theoptips/witSub">here</a></h3>
 </nav>
 <div class="main-content">
     <div class="notebook">
