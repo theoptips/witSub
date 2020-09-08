@@ -24,9 +24,15 @@ Rocket Journal is the best wellness productivity tool for you. Document memories
 1. Visit [Demo](https://rocketjournal-b9099.wl.r.appspot.com)
 1. Sign up for account
 1. Log in 
-1. (Note factory, placeholder data is loaded)
+1. (Note factory, placeholder data is loaded once loggedin)
 1. Submit and try the following utterance TODO
+1. Try sample utterance: add Register for Hack to Monday list
+1. Try sample utterance multiple times: remove first item in Monday
+1. Try sample utterance again: add Register for Hack to Monday list
 1. (Note currently, the logic is implemented for demo purpose on the Monday list Only)
+1. (Limited implementation due to hackathon time limit, see cool features, next steps in Next Step section)
+
+![Demo Image](demoImage01.PNG)
 
 ## How to Run Locally
 1. Download [repo](https://github.com/theoptips/witSub)
