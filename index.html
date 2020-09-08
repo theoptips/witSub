@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<!-- <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script> -->
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<!-- <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script> -->
+</head>
+<body>
+<nav>
+    <form id="signup-form">
+        <input type="text" name="email" hint="email" />
+        <input type="password" name="password" hint="password"/>
+        <button>Sign Up</button>
+    </form>
+    <form id="signin-form">
+        <input type="text" name="email" hint="email" />
+        <input type="password" name="password" hint="password"/>
+        <button>Sign In</button>
+    </form>
+    <form id="signout">
+        <button>Sign Out</button>
+    </form>
+    <form id="witapi" style="color:white">
+      <h3>WIT API</h3>
+          <input type="text" name="message" hint="email" />
+          <!-- <input type="submit value="Log Journal"> -->
+          <button>Submit</button>
+    </form>
+    <div style="color:white;" id="witresult"><p>test</p></div>
+</nav>
+<div class="main-content">
+    <div class="notebook">
+        <div class="notebook__inner">
+            <div class="title">
+                <h1>This Week</h1>
+                <h3>Weekly Planner</h3>
+            </div>
+            <div class="days">
+                <div class="days__item">
+                    <div class="days__day">Monday</div>
+                    <div class="days__list" id="Monday">
+                        <p>Wit.ai webinar</p>
+                        <p>Facebook Developer Blog</p>
+                        <p>Glitch</p>
+                        <p>Messenger API</p>
+                    </div>
+                </div>
+                <div class="days__item">
+                    <div class="days__day">Tuesday</div>
+                    <div class="days__list" id="Tuesday">
+                        <p>React</p>
+                        <p>Webhook</p>
+                        <p>Firebase</p>
+                        <div class="highlighted">
+                            <div class="text"> <span>9am: Register on Devpost</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="days__item">
+                    <div class="days__day">Wednesday</div>
+                    <div class="days__list" id="Wednesday">
+                        <p>SEO LP</p>
+                        <p>Weekly Meet</p>
+                        <div class="highlighted">
+                            <div class="text"> <span>2pm: Anastasia</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="days__item">
+                    <div class="days__day" >Thursday</div>
+                    <div class="days__list" id="Thursday">
+                        <p>SEO LP</p>
+                        <div class="highlighted">
+                            <div class="text"> <span>2pm: Come From Away</span></div>
+                            <div class="text"> <span>7pm: The Band's Visit</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="days__item">
+                    <div class="days__day">Friday</div>
+                    <div class="days__list" id="Friday">
+                        <p>Notion docs</p>
+                        <p>Ad report</p>
+                        <div class="highlighted">
+                            <div class="text"> <span>2pm: Dear Evan Hansen</span></div>
+                            <div class="text"> <span>7pm: Frozen</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="days__item">
+                    <div class="days__day" >Weekend</div>
+                    <div class="days__list" id="Weekend">
+                        <p>Final sprint</p>
+                        <div class="highlighted">
+                            <div class="text"> <span>12pm: Record Demo</span></div>
+                            <div class="text"> <span>2pm: Submit Entry</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="notes"><span>notes</span>
+                <div class="notes__list">RocketJournal turns messages into journal entries, instantly. Display them beautifully. Inspired by Bullet Journal. RJ helps you get things done fast. Be productive. Be well.</div>
+            </div>
+            <div class="expenses">
+                <h4>CORE CONCEPTS</h4>
+                <div class="expenses__box"><span class="expenses__title">Utterance</div>
+                <div class="expenses__box"><span class="expenses__title">Intent</div>
+                <div class="expenses__box"><span class="expenses__title">Entity</div>
+                <div class="expenses__box"><span class="expenses__title">One shot NLP</div>
+                <div class="expenses__box"><span class="expenses__title">Webhook</div>
+                <div class="expenses__box"><span class="expenses__title">API</div>
+                <div class="savings"><span class="expenses__title">Custom Entity, Message Body</div>
+            </div>
+            <div class="picture">
+                <div class="picture__border"><img src="https://devopedia.org/images/article/187/4949.1560446213.png" />
+                    <figcaption> Wit.ai hack<br/>SF &hearts; </figcaption>
+                </div>
+            </div>
+            <div class="goals"><span>weekly</span><span>goals</span>
+                <div class="goals__inner">
+                    <div class="goals__list">
+                        <div class="goals__item">
+                            <div class="goals__item__checkbox"> <span>&#10004;</span></div>
+                            <div class="goals__item__desc">Hackathon</div>
+                        </div>
+                        <div class="goals__item">
+                            <div class="goals__item__checkbox"></div>
+                            <div class="goals__item__desc">PyCon2020</div>
+                        </div>
+                        <div class="goals__item">
+                            <div class="goals__item__checkbox"></div>
+                            <div class="goals__item__desc">KonMari Challenge</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="tracker">
+                <div class="tracker__day">M</div>
+                <div class="tracker__day">T</div>
+                <div class="tracker__day">W</div>
+                <div class="tracker__day">T</div>
+                <div class="tracker__day">F</div>
+                <div class="tracker__day">S</div>
+                <div class="tracker__day">S</div>
+                <div class="tracker__title">Exercising</div>
+                <div class="tracker__bubble"></div>
+                <div class="tracker__bubble"></div>
+                <div class="tracker__bubble"></div>
+                <div class="tracker__bubble"></div>
+                <div class="tracker__bubble"></div>
+                <div class="tracker__bubble"></div>
+                <div class="tracker__bubble"></div>
+                <div class="tracker__title">Reading</div>
+                <div class="tracker__bubble"></div>
+                <div class="tracker__bubble"></div>
+                <div class="tracker__bubble"></div>
+                <div class="tracker__bubble"></div>
+                <div class="tracker__bubble"></div>
+                <div class="tracker__bubble"></div>
+                <div class="tracker__bubble"></div>
+                <div class="tracker__title">Caffeine Free</div>
+                <div class="tracker__bubble"></div>
+                <div class="tracker__bubble"></div>
+                <div class="tracker__bubble"></div>
+                <div class="tracker__bubble"></div>
+                <div class="tracker__bubble"></div>
+                <div class="tracker__bubble"></div>
+                <div class="tracker__bubble"></div>
+        </div>
+    </div>
+</div>
+</div>
+<aside class="context">
+    <div class="explanation">AI, JavaScript code, Wit.ai API, logic created by Yu Sun for Wit.ai Hackathon September 2020.</div>
+</aside>
+<footer> CSS Credit to oliviale on CodePen by <a href="https://twitter.com/meowlivia_" target="_blank">T</a><a href="https://github.com/oliviale" target="_blank">G</a></footer>
+
+<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-database.js"></script>
+<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+<script src="app3.js"></script>  
+<script type="text/javascript">
+    
+
+  
+  // let currentUserId;
+
+  // firebase.auth().onAuthStateChanged(function(user) {
+  // if (user) {
+  //   // User is signed in.
+  //   user.providerData.forEach(function (profile) {
+  //       console.log("Sign-in provider: " + profile.providerId);
+  //       console.log("  Provider-specific UID: " + profile.uid);
+  //       console.log("  Name: " + profile.displayName);
+  //       console.log("  Email: " + profile.email);
+  //       console.log("  Photo URL: " + profile.photoURL);
+  //       console.log(user.uid)
+  //       currentUserId = user.uid
+  //     });
+  // } else {
+  //   // No user is signed in.
+  // }
+  //   });
+
+
+
+  // function fireInit(){
+  //   const dataMonday = {
+  //       messages: ["Wit.ai webinar", "Facebook Developer Blog", "Glitch", "Messenger API"],
+  //       author:currentUserId,
+  //     };
+
+  //     const dbFirestore = firebase.firestore()
+  //     dbFirestore
+  //     //const res = dbFirestore.collection("posts").doc('LA').set(data);
+  //     console.log(currentUserId)
+  //     const res = dbFirestore.collection(currentUserId).doc('monday').set(dataMonday);
+
+  //     res
+  //     console.log('end of fire store')} ;
+
+  //fireInit()
+  //setTimeout(fireInit, 1000);
+
+
+
+  function checkUser(){
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        // User is signed in.
+        user.providerData.forEach(function (profile) {
+            // console.log("Sign-in provider: " + profile.providerId);
+            // console.log("  Provider-specific UID: " + profile.uid);
+            // console.log("  Name: " + profile.displayName);
+            // console.log("  Email: " + profile.email);
+            // console.log("  Photo URL: " + profile.photoURL);
+            // console.log(user.uid)
+            return user.uid
+          });
+      } else {
+        // No user is signed in.
+      }
+        });
+
+  }
+
+
+
+  function  initRecords(currentUserId){
+    const days = ["Monday", "Tuesday","Wednesday","Thursday","Thursday", "Friday", "Weekend"]
+    const dataMonday = {
+        messages: ["Wit.ai webinar", "Facebook Developer Blog", "Glitch", "Messenger API"],
+        author:currentUserId,
+      };
+    const dataTuesday = {
+        messages: ["React", "Webhook", "Firebase"],
+        author:currentUserId,
+        event: ["9am: Register on Devpost"]
+      };
+
+      const dataWednesday ={
+        messages: ["Firebase Auth", "Firebase realtime listener"],
+        author:currentUserId,
+        event: ["9am: Register on Devpost"]
+      }
+      const dataThursday ={
+        messages: ["Handling wit.ai response", "Update Dom", "Mock"],
+        author:currentUserId,
+        event: ["9am: Register on Devpost"]
+      }
+
+      const dataFriday ={
+        messages: ["Train utterance", "Debugging", "Testing"],
+        author:currentUserId,
+        event: ["9am: Register on Devpost"]
+      }
+
+      const dataWeekend ={
+        messages: ["Record Demo", "Submit Entry", "Screenshot"],
+        author:currentUserId,
+        event: ["2pm: Testing"]
+      }
+
+
+      const dataDay = {
+        "Monday": dataMonday,
+        "Tuesday": dataTuesday, 
+        "Wednesday": dataWednesday,
+        "Thursday":dataThursday, 
+        "Friday":dataFriday,
+        "Weekend":dataWeekend
+    }
+
+      const dbFirestore = firebase.firestore()
+      dbFirestore
+      // console.log(currentUserId)
+
+      // const res = dbFirestore.collection(currentUserId).doc(day).set(dataDay);
+      // res
+      //console.log('end of fire store');
+
+      let initDayMessages;
+      let initDayHTML;
+
+      days.forEach(function (day) {
+        dbFirestore.collection(currentUserId).doc(day).set(dataDay[day]);
+        //console.log(day)
+
+        initDayMessages= dataDay[day].messages;
+        initDayHTML = ""
+        initDayMessages.forEach(function(item){
+          initDayHTML+= '<p>';  
+          initDayHTML += item;
+          initDayHTML += '</p>';});
+          tDay = day.charAt(0).toUpperCase() + day.slice(1)
+          document.getElementById(tDay).innerHTML = initDayHTML;
+        
+    });
+
+
+
+
+
+
+      //const doc = db.collection('cities').doc('SF');
+
+      const col = dbFirestore.collection(currentUserId)
+
+      //TODO
+      
+      
+
+    // col.onSnapshot(function(snap) {
+    //     console.log("Current data: ", snap);
+    // }, function(error) {
+    //     //...
+    // });
+
+    col.doc("Thursday")
+    .onSnapshot(function(snap) {
+        console.log("Current data: ", snap.data());
+    });
+
+
+    currentUserId = sessionStorage.getItem('currentUserId');
+
+    // eventListener for Monday
+
+                    //     <div class="days__list">
+                    //     <p>Wit.ai webinar</p>
+                    //     <p>Facebook Developer Blog</p>
+                    //     <p>Glitch</p>
+                    //     <p>Messenger API</p>
+                    // </div>
+    dbFirestore.collection(currentUserId).doc("Monday")
+        .onSnapshot(function(doc) {
+            let listenerTemp = doc.data().messages;
+            let mondayListenerTempList = doc.data().messages;
+            console.log(listenerTemp)
+            console.log('in the change listener')
+            console.log("Current data: ", doc.data());
+
+            let mondayListenTemp = ""
+            mondayListenerTempList.forEach(function(item){
+              mondayListenTemp+= '<p>';
+              mondayListenTemp += item;
+              mondayListenTemp += '</p>';
+            })
+
+            
+
+            document.getElementById('Monday').innerHTML = mondayListenTemp;
+        });
+
+
+  }
+
+
+  // cUser = async () =>{
+  //   // setTimeout(1000)
+  //   let c = await checkUser()
+  //   return c
+  // }
+
+  //let c = checkUser()
+  // console.log(c)
+  //console.log(cUser())
+  // this function cannot be async
+  // because it is an event 
+  firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        // User is signed in.
+        user.providerData.forEach(function (profile) {
+            // console.log("Sign-in provider: " + profile.providerId);
+            // console.log("  Provider-specific UID: " + profile.uid);
+            // console.log("  Name: " + profile.displayName);
+            // console.log("  Email: " + profile.email);
+            // console.log("  Photo URL: " + profile.photoURL);
+            console.log(user.uid)
+            sessionStorage.setItem('currentUserId', user.uid);
+            if(user.uid){
+                initRecords(user.uid)
+            }
+          });
+      } else {
+        // No user is signed in.
+      }})
+
+
+    
+</script>  
+
+</body>
+</html>
